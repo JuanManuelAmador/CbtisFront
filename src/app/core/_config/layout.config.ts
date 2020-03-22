@@ -21,7 +21,7 @@ export class LayoutConfig {
 			enabled: true,
 			type: 'spinner-logo',
 			logo: './assets/media/logos/logo-mini-md.png',
-			message: 'Please wait...',
+			message: 'Porfavor espere...',
 		},
 		// == Colors for javascript
 		colors: {

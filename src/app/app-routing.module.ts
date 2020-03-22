@@ -16,6 +16,10 @@ const routes: Routes = [
 		canActivate: [AuthGuard],
 		children: [
 			{
+				path: 'home',
+				loadChildren: () => import('app/views/CBTIS/dashboard/dashboard.module').then(m => m.DashboardModule),
+			},
+			{
 				path: 'dashboard',
 				loadChildren: () => import('app/views/pages/dashboard/dashboard.module').then(m => m.DashboardModule),
 			},

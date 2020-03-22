@@ -1,5 +1,11 @@
 export class PageConfig {
 	public defaults: any = {
+		home: {
+			page: {
+				title: 'Inicio',
+				desc: 'Instrucciones Iniciales'
+			},
+		},
 		dashboard: {
 			page: {
 				title: 'Dashboard',

@@ -27,13 +27,13 @@ export const locale = {
 				CONTACT: '接触',
 			},
 			LOGIN: {
-				TITLE: 'Create Account',
-				BUTTON: 'Sign In',
+				TITLE: 'Crear Cuenta',
+				BUTTON: 'Iniciar Session',
 			},
 			FORGOT: {
-				TITLE: 'Forgotten Password?',
-				DESC: 'Enter your email to reset your password',
-				SUCCESS: 'Your account has been successfully reset.'
+				TITLE: '¿Contraseña Olvidada?',
+				DESC: 'Ingresa tu email para resetear tu contraseña',
+				SUCCESS: 'Tu contraseña se reseteo con exito'
 			},
 			REGISTER: {
 				TITLE: 'Sign Up',
