@@ -1,0 +1,91 @@
+<style>
+	.float{
+		position:fixed;
+		width:60px;
+		height:60px;
+		bottom:40px;
+		right:40px;
+		background-color:#0C9;
+		color:#FFF;
+		border-radius:50px;
+		text-align:center;
+		box-shadow: 2px 2px 3px #999;
+	}
+
+	.my-float{
+		margin-top:22px;
+	}
+</style>
+<a routerLink="createExam" class="float">
+	<i class="fa fa-plus my-float"></i>
+</a>
+<div class="row">
+	<div class="col-xl-4">
+		<div class="kt-portlet">
+			<div class="kt-portlet__head">
+				<div class="kt-portlet__head-label">
+					<span class="kt-portlet__head-icon">
+						<i class="flaticon-statistics"></i>
+					</span>
+					<h3 class="kt-portlet__head-title">
+						PER2020
+					</h3>
+				</div>
+				<div class="kt-portlet__head-toolbar">
+					<div class="kt-portlet__head-actions">
+						<a href="#" class="btn btn-outline-hover-success btn-sm btn-icon btn-icon-md">
+							<i class="flaticon2-add-1"></i>
+						</a>
+						<a href="#" class="btn btn-outline-hover-warning btn-sm btn-icon btn-icon-md">
+							<i class="flaticon2-pen"></i>
+						</a>
+						<a href="#" class="btn btn-outline-hover-danger btn-sm btn-icon btn-icon-md">
+							<i class="flaticon2-trash"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="kt-portlet__body">
+				<li>
+					<div class="kt-list-timeline">
+						<div class="kt-list-timeline__items">
+							<div class="kt-list-timeline__item">
+								<span class="kt-list-timeline__badge kt-list-timeline__badge--success"></span>
+								<span class="kt-list-timeline__text">Numero de Preguntas: 160</span>
+							</div>
+
+							<div class="kt-list-timeline__item">
+								<span class="kt-list-timeline__badge kt-list-timeline__badge--warning"></span>
+								<span class="kt-list-timeline__text">Duración del examen: 160 minutos</span>
+							</div>
+							<div class="kt-list-timeline__item">
+								<span class="kt-list-timeline__badge kt-list-timeline__badge--warning"></span>
+								<span class="kt-list-timeline__text">Materias asignadas: Matematicas, Escritura, Logica</span>
+							</div>
+
+							<div class="kt-list-timeline__item">
+								<span class="kt-list-timeline__badge kt-list-timeline__badge--danger"></span>
+								<span class="kt-list-timeline__text">Estatus <span class="kt-badge kt-badge--success kt-badge--inline">Creado</span></span>
+							</div>
+						</div>
+					</div>
+				</li>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<!--
+<kt-portlet>
+	<kt-portlet-header>
+		<ng-container ktPortletTitle>
+		</ng-container>
+		<ng-container ktPortletTools>
+		</ng-container>
+	</kt-portlet-header>
+	<kt-portlet-body></kt-portlet-body>
+	<kt-portlet-footer></kt-portlet-footer>
+</kt-portlet>
+-->

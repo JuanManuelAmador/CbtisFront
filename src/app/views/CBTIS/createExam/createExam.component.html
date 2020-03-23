@@ -1,0 +1,157 @@
+<kt-portlet>
+	<kt-portlet-body>
+
+		<!--begin: Wizard -->
+		<div #wizard class="kt-grid kt-wizard-v1 kt-wizard-v1--white" id="kt_wizard_v1" data-ktwizard-state="step-first">
+			<div class="kt-grid__item">
+				<!--begin: Form Wizard Nav -->
+				<div class="kt-wizard-v1__nav">
+					<div class="kt-wizard-v1__nav-items">
+						<a class="kt-wizard-v1__nav-item" href="javascript:;" data-ktwizard-type="step" data-ktwizard-state="current">
+							<div class="kt-wizard-v1__nav-body">
+								<div class="kt-wizard-v1__nav-icon">
+									<i class="flaticon2-layers-1"></i>
+								</div>
+								<div class="kt-wizard-v1__nav-label">
+									1) Datos Basicos
+								</div>
+							</div>
+						</a>
+						<a class="kt-wizard-v1__nav-item" href="javascript:;" data-ktwizard-type="step">
+							<div class="kt-wizard-v1__nav-body">
+								<div class="kt-wizard-v1__nav-icon">
+									<i class="flaticon-list"></i>
+								</div>
+								<div class="kt-wizard-v1__nav-label">
+									2) Preguntas
+								</div>
+							</div>
+						</a>
+						<a class="kt-wizard-v1__nav-item" href="javascript:;" data-ktwizard-type="step">
+							<div class="kt-wizard-v1__nav-body">
+								<div class="kt-wizard-v1__nav-icon">
+									<i class="flaticon-globe"></i>
+								</div>
+								<div class="kt-wizard-v1__nav-label">
+									3) Verificar y Crear
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<!--end: Form Wizard Nav -->
+			</div>
+			<div class="kt-grid__item kt-grid__item--fluid kt-wizard-v1__wrapper">
+				<!--begin: Form Wizard Form-->
+				<form class="kt-form" id="kt_form">
+					<!--begin: Form Wizard Step 1-->
+					<div class="kt-wizard-v1__content" data-ktwizard-type="step-content" data-ktwizard-state="current">
+						<div class="kt-heading kt-heading--md">Información Basica</div>
+						<div class="kt-form__section kt-form__section--first">
+							<div class="kt-wizard-v1__form">
+								<div class="form-group">
+									<label>ID Examen</label>
+									<input type="text" class="form-control" [disabled]="true" [value]="model.examID" name="examName" [(ngModel)]="model.examID">
+									<span class="form-text text-muted">Este es el ID unico del examen.</span>
+
+								</div>
+								<div class="form-group">
+									<label>Nombre de Examen</label>
+									<input type="text" class="form-control" [disabled]="true" [value]="model.examName" name="examName" [(ngModel)]="model.examName">
+									<span class="form-text text-muted">El nombre del examen es autogenerado.</span>
+
+								</div>
+								<div class="form-group">
+									<label>Día del Examen</label>
+									<input type="date" class="form-control" [required]="true" name="examDate" [(ngModel)]="model.examDate" placeholder="Address Line 2">
+									<span class="form-text text-muted">Favor de ingresar el día en el que se aplicara el examen en minutos.</span>
+								</div>
+								<div class="form-group">
+									<label>Materias incluidas</label><br/>
+									<mat-form-field>
+										<mat-select [formControl]="toppings" multiple>
+											<mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+										</mat-select>
+									</mat-form-field>
+									<span class="form-text text-muted">Favor de selccionar las materias presentadas en el examen.</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--end: Form Wizard Step 1-->
+
+					<!--begin: Form Wizard Step 2-->
+					<div class="kt-wizard-v1__content" data-ktwizard-type="step-content">
+						<div class="kt-heading kt-heading--md">Detalles de preguntas</div>
+						<div class="kt-form__section kt-form__section--first">
+							<div class="kt-wizard-v1__form">
+								<div class="form-group">
+									<label>Numero de Preguntas</label>
+									<input type="number" step="1" [required]="true" minlength="1" class="form-control" name="examQuestions" [(ngModel)]="model.examQuestions" placeholder="Numero de preguntas">
+									<span class="form-text text-muted">Favor de ingresar el numero de preguntas.</span>
+								</div>
+								<div class="form-group">
+									<label>Duración del examen</label>
+									<input type="text" class="form-control" [required]="true" name="weight" [(ngModel)]="model.examTime" placeholder="Tiempo de examen">
+									<span class="form-text text-muted">Favor de ingresar el tiempo en el que debe de efectuar el examen.</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--end: Form Wizard Step 2-->
+
+					<!--begin: Form Wizard Step 5-->
+					<div class="kt-wizard-v1__content" data-ktwizard-type="step-content">
+						<div class="kt-heading kt-heading--md">Resumen de creación</div>
+						<div class="kt-form__section kt-form__section--first">
+							<div class="kt-wizard-v1__review">
+								<div class="kt-wizard-v1__review-item">
+									<div class="kt-wizard-v1__review-title">
+										Nombre del examen
+									</div>
+									<div class="kt-wizard-v1__review-content">{{model.examName}}</div>
+								</div>
+								<div class="kt-wizard-v1__review-item">
+									<div class="kt-wizard-v1__review-title">
+										Fecha de aplicación
+									</div>
+									<div class="kt-wizard-v1__review-content">{{model.examDate}}</div>
+								</div>
+								<div class="kt-wizard-v1__review-item">
+									<div class="kt-wizard-v1__review-title">
+										Numero de preguntas
+									</div>
+									<div class="kt-wizard-v1__review-content">{{model.examQuestions}} preguntas</div>
+								</div>
+								<div class="kt-wizard-v1__review-item">
+									<div class="kt-wizard-v1__review-title">
+										Tiempo para aplicación
+									</div>
+									<div class="kt-wizard-v1__review-content">{{model.examTime}} minutos</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--end: Form Wizard Step 5-->
+
+					<!--begin: Form Actions -->
+					<div class="kt-form__actions">
+						<div class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-prev">
+							Regresar
+						</div>
+						<div routerLink="Questions/{{model.examID}}" class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-submit">
+							Crear Examen
+						</div>
+						<div class="btn btn-brand btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-next">
+							Siguiente Paso
+						</div>
+					</div>
+					<!--end: Form Actions -->
+				</form>
+				<!--end: Form Wizard Form-->
+			</div>
+		</div>
+		<!--end: Wizard -->
+
+	</kt-portlet-body>
+</kt-portlet>
