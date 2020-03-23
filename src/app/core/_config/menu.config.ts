@@ -324,6 +324,13 @@ export class MenuConfig {
 						}
 					]
 				},
+				{
+					title: 'Administrar Examenes',
+					root: true,
+					icon: 'flaticon-lock',
+					page: '/adminExams',
+					bullet: 'dot',
+				},
 			]
 		},
 	};

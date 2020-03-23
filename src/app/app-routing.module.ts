@@ -16,6 +16,18 @@ const routes: Routes = [
 		canActivate: [AuthGuard],
 		children: [
 			{
+				path: 'adminExams/createExam/Questions/:id',
+				loadChildren: () => import('app/views/CBTIS/adminQuestions/adminQuestions.module').then(m => m.AdminQuestionsModule),
+			},
+			{
+				path: 'adminExams/createExam',
+				loadChildren: () => import('app/views/CBTIS/createExam/createExam.module').then(m => m.CreateExamModule),
+			},
+			{
+				path: 'adminExams',
+				loadChildren: () => import('app/views/CBTIS/adminExams/adminExams.module').then(m => m.AdminExamsModule),
+			},
+			{
 				path: 'home',
 				loadChildren: () => import('app/views/CBTIS/dashboard/dashboard.module').then(m => m.DashboardModule),
 			},
